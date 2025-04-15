@@ -36,12 +36,20 @@
           </thead>
           <tbody>
             <tr v-for="movie in movies" :key="movie.name" class="border-b">
-              <td class="py-4 pl-6">
-                <div class="flex items-center gap-3">
-                  <v-img :src="movie.image" width="40" height="40" class="rounded-lg" />
-                  <span class="font-medium">{{ movie.name }}</span>
-                </div>
-              </td>
+                <td class="py-4 pl-6">
+  <div class="flex items-center gap-3">
+    <div class="w-12 h-12 overflow-hidden rounded-full">
+      <v-img 
+        :src="movie.image" 
+        width="40" 
+        height="40" 
+        class="rounded-full"
+        cover
+      />
+    </div>
+    <span class="font-medium">{{ movie.name }}</span>
+  </div>
+</td>   
               <td>
                 <div class="flex gap-2">
                   <v-chip
@@ -96,13 +104,15 @@
   
   <script setup>
   import { ref } from 'vue'
+  import  Avengers from "../assets/Avngers.png"
+  import Moonlight from "../assets//Moonlight.png"
   
   const search = ref('')
   
   const movies = [
     {
       name: 'Avengers Black Widow',
-      image: '/movies/black-widow.jpg',
+      image: Avengers,
       categories: ['ACTION', 'THRILLER'],
       watchlists: 389234,
       owner: 'Sony Entertainment',
@@ -110,7 +120,7 @@
     },
     {
       name: 'Moonlight',
-      image: '/movies/moonlight.jpg',
+      image: Moonlight,
       categories: ['TRUE STORY'],
       moreCategories: 2,
       watchlists: 5893,

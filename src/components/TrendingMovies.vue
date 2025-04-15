@@ -36,12 +36,20 @@
           </thead>
           <tbody>
             <tr v-for="movie in movies" :key="movie.name" class="border-b">
-              <td class="py-4 pl-6">
-                <div class="flex items-center gap-3">
-                  <v-img :src="movie.image" width="40" height="40" class="rounded-lg" />
-                  <span class="font-medium">{{ movie.name }}</span>
-                </div>
-              </td>
+                <td class="py-4 pl-6">
+  <div class="flex items-center gap-3">
+    <div class="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center">
+      <v-img 
+        :src="movie.image" 
+        width="40" 
+        height="40"
+        class="rounded-full" 
+        cover
+      />
+    </div>
+    <span class="font-medium">{{ movie.name }}</span>
+  </div>
+</td>
               <td>
                 <div class="flex gap-2">
                   <v-chip
@@ -96,13 +104,14 @@
   
   <script setup>
   import { ref } from 'vue'
+  import moonlight from "../assets/Moonlight.png"
   
   const search = ref('')
   
   const movies = [
     {
       name: 'Moonlight',
-      image: '/movies/moonlight.jpg',
+      image: moonlight,
       categories: ['TRUE STORY'],
       moreCategories: 2,
       watchlists: 5893,
