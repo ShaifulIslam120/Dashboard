@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Gradient Text Styles */
+.gradient-text {
+  background: linear-gradient(
+    to left,
+    #35C3F3,
+    #8B9FE8,
+    #E681D8,
+    #FFA9A4,
+    #FED2CE,
+    #35C3F3
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 100%;
+}
+
+/* Gradient Chip Styles */
+.gradient-chip {
+  background: linear-gradient(
+    45deg,
+    #35C3F3,
+    #8B9FE8,
+    #E681D8,
+    #FFA9A4,
+    #FED2CE
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  border: 1px solid #E0E0E0;
+}
+
+/* Vuetify Component Styles */
+.v-card {
+  border: 1px solid #E0E0E0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  background: white;
+}
+
+.v-btn.v-btn--variant-outlined {
+  border-color: #E0E0E0;
+}
+
+.v-btn--icon {
+  @apply text-gray-400;
+}
+
+/* Tab Styles */
+.v-tabs {
+  @apply h-16;
+}
+
+.v-tabs .v-tab {
+  @apply normal-case tracking-normal font-normal;
+}
+
+.v-tab--selected {
+  @apply text-white;
+}
+
+.v-tab--selected .v-tab__slider {
+  background: linear-gradient(
+    45deg,
+    #35C3F3,
+    #8B9FE8,
+    #E681D8,
+    #FFA9A4,
+    #FED2CE
+  );
+}
+/* Add these table styles */
+.v-table {
+    background: transparent;
+  }
+  
+  .v-table .v-table__wrapper > table > thead > tr > th {
+    color: #6B7280;
+    font-weight: 500;
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+  
+  .search-field .v-field__input {
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
